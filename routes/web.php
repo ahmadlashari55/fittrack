@@ -6,6 +6,7 @@ use App\Http\Controllers\FoodLogController;
 use App\Http\Controllers\ExerciseLogController;
 use App\Http\Controllers\AnalyzerController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,17 +30,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// LIVE DEPLOYMENT MIGRATION ROUTE (Yeh bina login ke chalega)
 Route::get('/run-migrations-secret', function () {
     try {
-        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+        Artisan::call('migrate:fresh', [
             '--seed' => true,
             '--force' => true,
+            '--no-interaction' => true, // Yeh line Laravel ko force karegi ke sawal na poochay
         ]);
         return 'Migrations and seeding completed successfully! Aap ab login kar sakte hain.';
     } catch (\Exception $e) {
         return 'Error: ' . $e->getMessage();
     }
 });
-
 
 require __DIR__.'/auth.php';
