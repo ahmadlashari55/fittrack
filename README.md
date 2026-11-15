@@ -7,6 +7,19 @@ A modern, full-stack health and fitness tracking web application built with Lara
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?style=flat-square&logo=bootstrap)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange?style=flat-square&logo=mysql)
 
+## 📸 Screenshots
+
+### Modern Dashboard & Analytics
+![Dashboard](screenshots/dashboard.png)
+
+### Dynamic Food Logging (Multiple Items)
+![Food Log](screenshots/food-log.png)
+
+### Smart AI Analyzer
+![Analyzer](screenshots/analyzer.png)
+
+---
+
 ## 🚀 Key Features
 
 - **Dynamic Food Logging:** Log multiple food items at once with a dynamic form. Comes with a pre-seeded database of 40+ Pakistani foods with accurate calorie counts.
